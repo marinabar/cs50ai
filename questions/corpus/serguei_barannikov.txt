@@ -1,0 +1,21 @@
+Serguei Barannikov (Russian: Сергей Александрович Баранников; born April 16, 1972) is a mathematician, known for his works in algebraic topology, algebraic geometry and mathematical physics.
+
+Biography
+Barannikov graduated with honors from Moscow State University in 1994.
+
+In 1995–1999, Barannikov received his Doctor of Philosophy degree (Ph.D.) in Mathematics from the University of California, Berkeley. Simultaneously, he was an invited researcher at Institut des Hautes Etudes Scientifiques in France.
+
+During 1999–2010, he worked as a researcher at Ecole Normale Supérieure in Paris. Since 2010, he works as a researcher at Paris Diderot University.
+
+Scientific work
+At the age of 20, Barannikov wrote a paper on algebraic topology, in which he introduced the "canonical forms" invariants of filtered complexes, later also called "Barannikov modules". Ten years later, these invariants became widely used in applied mathematics in the field of topological data analysis under the name of "persistence bar-codes" and "persistence diagrams".
+
+Barannikov is known for his work on mirror symmetry, Morse theory, and Hodge theory. In mirror symmetry, he is a co-author of construction of Frobenius manifold, mirror symmetric to genus zero Gromov–Witten invariants.
+
+He is one of authors of hypothesis of homological mirror symmetry for Fano manifolds. In the theory of exponential integrals, Barannikov is a co-author of the theorem on the degeneration of analogue of Hodge–de Rham spectral sequence.
+
+In the theory of noncommutative varieties, Barannikov is the author of the theory of noncommutative Hodge structures.
+
+Barannikov is known for: Barannikov–Morse complexes, Barannikov modules, Barannikov–Kontsevich construction, and Barannikov–Kontsevich theorem.
+
+

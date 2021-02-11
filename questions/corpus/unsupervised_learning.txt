@@ -1,0 +1,60 @@
+Unsupervised learning (UL) is a type of algorithm that learns patterns from untagged data. The hope is that through mimicry, the machine is forced to build a compact internal representation of its world. In contrast to Supervised Learning (SL) where data is tagged by a human, eg. as "car" or "fish" etc, UL exhibits self-organization that captures patterns as neuronal predelections or probability densities. The other levels in the supervision spectrum are Reinforcement Learning where the machine is given only a numerical performance score as its guidance, and Semi-supervised learning where a smaller portion of the data is tagged. Two broad methods in UL are Neural Networks and Probabilistic Methods.
+
+Probabilistic methods
+Two of the main methods used in unsupervised learning are principal component and cluster analysis. Cluster analysis is used in unsupervised learning to group, or segment, datasets with shared attributes in order to extrapolate algorithmic relationships. Cluster analysis is a branch of machine learning that groups the data that has not been labelled, classified or categorized. Instead of responding to feedback, cluster analysis identifies commonalities in the data and reacts based on the presence or absence of such commonalities in each new piece of data. This approach helps detect anomalous data points that do not fit into either group.
+
+The only requirement to be called an unsupervised learning strategy is to learn a new feature space that captures the characteristics of the original space by maximizing some objective function or minimising some loss function. Therefore, generating a covariance matrix is not unsupervised learning, but taking the eigenvectors of the covariance matrix is because the linear algebra eigendecomposition operation maximizes the variance; this is known as principal component analysis. Similarly, taking the log-transform of a dataset is not unsupervised learning, but passing input data through multiple sigmoid functions while minimising some distance function between the generated and resulting data is, and is known as an Autoencoder.
+
+A central application of unsupervised learning is in the field of density estimation in statistics, though unsupervised learning encompasses many other domains involving summarizing and explaining data features. It could be contrasted with supervised learning by saying that whereas supervised learning intends to infer a conditional probability distribution {\textstyle p_{X}(x\,|\,y)} conditioned on the label {\textstyle y} of input data; unsupervised learning intends to infer an a priori probability distribution {\textstyle p_{X}(x)} .
+
+Approaches
+Some of the most common algorithms used in unsupervised learning include: (1) Clustering, (2) Anomaly detection, (3) Neural Networks, and (4) Approaches for learning latent variable models.Each approach uses several methods as follows:
+
+Clustering methods include: hierarchical clustering, k-means, mixture models, DBSCAN, and OPTICS algorithm
+Anomaly detection methods include: Local Outlier Factor, and Isolation Forest
+Approaches for learning latent variable models such as Expectation–maximization algorithm (EM), Method of moments, and Blind signal separation techniques ( Principal component analysis, Independent component analysis, Non-negative matrix factorization, Singular value decomposition )
+Method of moments
+One of the statistical approaches for unsupervised learning is the method of moments. In the method of moments, the unknown parameters (of interest) in the model are related to the moments of one or more random variables, and thus, these unknown parameters can be estimated given the moments. The moments are usually estimated from samples empirically. The basic moments are first and second order moments. For a random vector, the first order moment is the mean vector, and the second order moment is the covariance matrix (when the mean is zero). Higher order moments are usually represented using tensors which are the generalization of matrices to higher orders as multi-dimensional arrays.
+
+In particular, the method of moments is shown to be effective in learning the parameters of latent variable models.Latent variable models are statistical models where in addition to the observed variables, a set of latent variables also exists which is not observed. A highly practical example of latent variable models in machine learning is the topic modeling which is a statistical model for generating the words (observed variables) in the document based on the topic (latent variable) of the document. In the topic modeling, the words in the document are generated according to different statistical parameters when the topic of the document is changed. It is shown that method of moments (tensor decomposition techniques) consistently recover the parameters of a large class of latent variable models under some assumptions.
+
+The Expectation–maximization algorithm (EM) is also one of the most practical methods for learning latent variable models. However, it can get stuck in local optima, and it is not guaranteed that the algorithm will converge to the true unknown parameters of the model. In contrast, for the method of moments, the global convergence is guaranteed under some conditions.
+
+Neural networks
+Basics
+First, some vocabulary:
+
+Tasks
+
+UL methods usually prepare a network for generative tasks rather than recognition, but grouping tasks as supervised or not can be hazy. For example, handwriting recognition started off in the 1980s as SL. Then in 2007, UL is used to prime the network for SL afterwards. Currently, SL has regained its position as the better method.
+
+Training
+During the learning phase, an unsupervised network tries to mimic the data it's given and uses the error in its mimicked output to correct itself (eg. its weights & biases). This resembles the mimicry behavior of children as they learn a language. Sometimes the error is expressed as a low probability that the erroneous output occurs, or it might be express as an unstable high energy state in the network.
+
+Energy
+An energy function is a macroscopic measure of a network's state. This analogy with physics is inspired by Ludwig Boltzmann's analysis of a gas' macroscopic energy from the microscopic probabilities of particle motion p {\displaystyle \propto } eE/kT, where k is the Boltzmann constant and T is temperature. In neural networks the relation is p = e-E / Z, where p & E vary over every possible input pattern. Hence, early neural networks bear the name Boltzmann Machine. Paul Smolensky calls -E the Harmony. A network seeks low energy which is high Harmony.
+
+Networks
+
+Boltzmann and Helmholtz came before neural networks formulations, but these networks borrowed from their analyses, so these networks bear their names. Hopfield, however, directly contributed to UL.
+
+Intermediate
+Here, distributions p(x) and q(x) will be abbreviated as p and q.
+
+History
+
+Some more vocabulary:
+
+Comparison of Networks
+
+Specific Networks
+Here, we highlight some characteristics of each networks. Ferromagnetism inspired Hopfield networks, Boltzmann machines, and RBMs. A neuron correspond to an iron domain with binary magnetic moments Up and Down, and neural connections correspond to the domain's influence on each other. Symmetric connections enables a global energy formulation. During inference the network updates each state using the standard activation step function. Symmetric weights guarantees convergence to a stable activation pattern.
+Hopfield networks are used as CAMs and are guaranteed to settle to a some pattern. Without symmetric weights, the network is very hard to analyze. With the right energy function, a network will converge.
+Boltzmann machines are stochastic Hopfield nets. Their state value is sampled from this pdf as follows: suppose a binary neuron fires with the Bernoulli probability p(1) = 1/3 and rests with p(0) = 2/3. One samples from it by taking a UNIFORMLY distributed random number y, and plugging it into the inverted cumulative distribution function, which in this case is the step function thresholded at 2/3. The inverse function = { 0 if x <= 2/3, 1 if x > 2/3 }
+Helmholtz machines are early inspirations for the Variational Auto Encoders. It's 2 networks combined into one—forward weights operates recognition and backward weights implements imagination. It is perhaps the first network to do both. Helmholtz did not work in machine learning but he inspired the view of "statistical inference engine whose function is to infer probable causes of sensory input" (3). the stochastic binary neuron outputs a probability that its state is 0 or 1. The data input is normally not considered a layer, but in the Helmholtz machine generation mode, the data layer receives input from the middle layer has separate weights for this purpose, so it is considered a layer. Hence this network has 3 layers.
+Variational Autoencoder (VAE) are inspired by Helmholtz machines and combines probability network with neural networks. An Autoencoder is a 3-layer CAM network, where the middle layer is supposed to be some internal representation of input patterns. The weights are named phi & theta rather than W and V as in Helmholtz—a cosmetic difference. The encoder neural network is a probability distribution qφ(z|x) and the decoder network is pθ(x|z). These 2 networks here can be fully connected, or use another NN scheme.
+
+Hebbian Learning, ART, SOM
+The classical example of unsupervised learning in the study of neural networks is Donald Hebb's principle, that is, neurons that fire together wire together. In Hebbian learning, the connection is reinforced irrespective of an error, but is exclusively a function of the coincidence between action potentials between the two neurons. A similar version that modifies synaptic weights takes into account the time between the action potentials (spike-timing-dependent plasticity or STDP). Hebbian Learning has been hypothesized to underlie a range of cognitive functions, such as pattern recognition and experiential learning.
+
+Among neural network models, the self-organizing map (SOM) and adaptive resonance theory (ART) are commonly used in unsupervised learning algorithms. The SOM is a topographic organization in which nearby locations in the map represent inputs with similar properties. The ART model allows the number of clusters to vary with problem size and lets the user control the degree of similarity between members of the same clusters by means of a user-defined constant called the vigilance parameter. ART networks are used for many pattern recognition tasks, such as automatic target recognition and seismic signal processing.
